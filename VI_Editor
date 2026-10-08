@@ -26,8 +26,6 @@ a – Append text after the current cursor position
 A – Append text at the very end of the current line
 o – Open a new line below the current line and enter insert mode
 O – Open a new line above the current line and enter insert mode
-p – Paste below
-P – Paste Above
 
 Editing, deleting, and managing text in command line mode:
 p – Paste below
