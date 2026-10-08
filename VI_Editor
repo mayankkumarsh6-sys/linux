@@ -1,0 +1,48 @@
+Welcome to vi editor 
+we are creating a file using vi
+
+
+there are 3 modes in vi
+
+1: Command Mode
+2: Insert Mode
+3: Last Line Mode
+
+
+Command mode: This is the default mode when you open a file. Every key you press acts as a command—like moving the cursor or deleting a line—rather than typing text.
+Insert mode: This is where you actually type text into the file. You enter this mode by pressing i and return to command mode by pressing the <esc> key.
+Last line mode: When in command mode, typing a colon (:) drops you into a third distinct state where terminal level commands are executed.
+
+
+How to Open VI Editor
+To open vi editors, we just need to type the command mentioned below.
+vi [file_name]
+
+To add new text, you have to switch from command mode to insert mode. Use these vi commands to start inserting text exactly where you want it to go:
+
+i – Insert text before the current cursor position
+I – Insert text at the very beginning of the current line
+a – Append text after the current cursor position
+A – Append text at the very end of the current line
+o – Open a new line below the current line and enter insert mode
+O – Open a new line above the current line and enter insert mode
+p – Paste below
+P – Paste Above
+
+Editing, deleting, and managing text in command line mode:
+p – Paste below
+P – Paste Above
+u - Undo the changes
+dd – Delete the entire current line
+4dd - Delete 4 lines
+15dd - Delete 15 lines
+x - Delete 1 character
+5xx - Delete 5 character
+yy - copy the current line
+
+
+Saving your work and exiting:
+:w – Save (write) the file but stay in the editor
+:wq – Save and quit
+:q! – Quit and discard all unsaved changes
+
