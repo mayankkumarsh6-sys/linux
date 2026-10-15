@@ -1,0 +1,67 @@
+AWK COMMANDS – QUICK INTERVIEW NOTES
+====================================
+
+1. OR CONDITION (||)
+awk -F',' '$4 > 77000 || $5 == "Inactive" {print $0}' employee.txt
+Meaning: Salary > 77000 OR status is Inactive.
+
+2. AND CONDITION (&&)
+awk -F',' '$4 > 77000 && $5 == "Inactive" {print $0}' employee.txt
+Meaning: Both conditions must be true.
+
+3. PRINT SELECTED COLUMNS
+awk -F',' '{OFS=" | "} {print $2,$4}' employee.txt
+Meaning: Print columns 2 and 4 with a separator.
+OFS = Output Field Separator.
+
+4. SEARCH A WORD
+awk '/HR/' employee.txt
+Meaning: Print lines containing HR (case-sensitive).
+
+5. TOTAL SALARY
+awk -F',' '{sum=sum+$4} END {print "Total salary:",sum}' employee.txt
+OR
+awk -F',' '{sum+=$4} END {print "Total salary:",sum}' employee.txt
+Meaning: Add all values in column 4.
+Output from your file: 882000.
+
+6. FILTER ACTIVE EMPLOYEES (CASE-INSENSITIVE)
+awk -F',' 'tolower($5)=="active"' employee.txt
+Meaning: Match Active, ACTIVE, or active.
+
+7. CONVERT TO UPPERCASE
+awk -F',' '{print toupper($3)}' employee.txt
+Meaning: Convert column 3 to uppercase.
+
+8. EXTRACT CHARACTERS
+awk -F',' '{print substr($3,1,2)}' employee.txt
+Meaning: Print first 2 characters of column 3.
+Syntax: substr(string, start, length)
+
+9. COUNT CHARACTERS
+awk -F',' '{print length($3)}' employee.txt
+Meaning: Count characters in column 3.
+
+IMPORTANT AWK VARIABLES
+-----------------------
+$0   = Entire line
+$1   = First column
+$2   = Second column
+$NF  = Last column
+NF   = Number of fields in current line
+NR   = Current record number
+FS   = Input field separator
+OFS  = Output field separator
+END  = Execute after processing all lines
+
+INTERVIEW TIPS
+--------------
+&&       = AND (both conditions true)
+||       = OR (at least one condition true)
+-F','    = Comma-separated input
+print    = Print output
+sum+=$4  = Add column 4 to running total
+toupper()= Convert to uppercase
+tolower()= Convert to lowercase
+substr() = Extract part of a string
+length() = Count characters
