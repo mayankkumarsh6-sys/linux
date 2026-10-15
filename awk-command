@@ -1,5 +1,8 @@
 AWK COMMANDS – QUICK INTERVIEW NOTES
 ====================================
+Bsic syntax:
+awk -F'separator' '{action}' filename
+
 
 1. OR CONDITION (||)
 awk -F',' '$4 > 77000 || $5 == "Inactive" {print $0}' employee.txt
@@ -58,7 +61,7 @@ INTERVIEW TIPS
 --------------
 &&       = AND (both conditions true)
 ||       = OR (at least one condition true)
--F','    = Comma-separated input
+-F       = Input field separator
 print    = Print output
 sum+=$4  = Add column 4 to running total
 toupper()= Convert to uppercase
