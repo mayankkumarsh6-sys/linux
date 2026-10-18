@@ -1,7 +1,6 @@
 AWK COMMANDS – QUICK INTERVIEW NOTES
 ====================================
 
-remove the lines
 Bsic syntax:
 awk -F'separator' '{action}' filename
 
